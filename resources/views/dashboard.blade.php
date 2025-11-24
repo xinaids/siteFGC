@@ -206,7 +206,7 @@
     <button class="mobile-btn" onclick="toggleMenu()">Menu</button>
 
     <div class="sidebar" id="sidebar">
-        <h2>FGC</h2>
+        <h2>FGC - MTB</h2>
 
         <a href="{{ route('rankings') }}">Rankings</a>
         <a href="{{ route('resultados') }}">Resultados</a>

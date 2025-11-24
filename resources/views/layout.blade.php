@@ -88,7 +88,7 @@
 <body>
 
 <div class="sidebar">
-    <h2>FGC</h2>
+    <h2>FGC - MTB</h2>
 
     <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">Dashboard Geral</a>
 
