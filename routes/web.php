@@ -50,3 +50,4 @@ Route::get('/pontuacao', function () {
 
 Route::resource('cidades', CidadeController::class);
 Route::resource('categorias', CategoriaController::class);
+Route::resource('equipes', \App\Http\Controllers\EquipeController::class);
