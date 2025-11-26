@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CidadeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -42,3 +43,8 @@ Route::get('/temporadas', function () {
 Route::get('/pontuacao', function () {
     return view('pontuacao');
 })->name('pontuacao');
+
+
+
+
+Route::resource('cidades', CidadeController::class);
