@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CidadeController;
+use App\Http\Controllers\CategoriaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -48,3 +49,4 @@ Route::get('/pontuacao', function () {
 
 
 Route::resource('cidades', CidadeController::class);
+Route::resource('categorias', CategoriaController::class);
