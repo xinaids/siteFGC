@@ -3,20 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CidadeController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\EquipeController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
-
-
+// Página inicial → Dashboard
 Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
+// Páginas simples (ainda sem CRUD)
 Route::get('/rankings', function () {
     return view('rankings');
 })->name('rankings');
@@ -28,10 +22,6 @@ Route::get('/resultados', function () {
 Route::get('/atletas', function () {
     return view('atletas');
 })->name('atletas');
-
-Route::get('/equipes', function () {
-    return view('equipes');
-})->name('equipes');
 
 Route::get('/provas', function () {
     return view('provas');
@@ -45,9 +35,7 @@ Route::get('/pontuacao', function () {
     return view('pontuacao');
 })->name('pontuacao');
 
-
-
-
+// CRUDs
 Route::resource('cidades', CidadeController::class);
 Route::resource('categorias', CategoriaController::class);
-Route::resource('equipes', \App\Http\Controllers\EquipeController::class);
+Route::resource('equipes', EquipeController::class); // CORRETO

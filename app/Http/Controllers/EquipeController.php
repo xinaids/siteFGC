@@ -12,8 +12,8 @@ class EquipeController extends Controller
         $busca = $request->input('busca', '');
 
         $equipes = Equipe::when($busca, function ($query, $busca) {
-                $query->where('nome', 'ILIKE', "%{$busca}%");
-            })
+            $query->where('nome', 'ILIKE', "%{$busca}%");
+        })
             ->orderBy('nome')
             ->paginate(20)
             ->withQueryString();
@@ -23,8 +23,10 @@ class EquipeController extends Controller
 
     public function create()
     {
-        return view('equipes.create');
+        $cidades = \App\Models\Cidade::orderBy('nome')->get();
+        return view('equipes.create', compact('cidades'));
     }
+
 
     public function store(Request $request)
     {
@@ -44,8 +46,10 @@ class EquipeController extends Controller
 
     public function edit(Equipe $equipe)
     {
-        return view('equipes.edit', compact('equipe'));
+        $cidades = \App\Models\Cidade::orderBy('nome')->get();
+        return view('equipes.edit', compact('equipe', 'cidades'));
     }
+
 
     public function update(Request $request, Equipe $equipe)
     {

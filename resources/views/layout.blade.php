@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>@yield('title', 'FGC')</title>
@@ -86,9 +87,11 @@
                 left: -250px;
                 transition: 0.3s;
             }
+
             .sidebar.open {
                 left: 0;
             }
+
             .content {
                 margin-left: 0;
             }
@@ -110,77 +113,79 @@
 
 <body>
 
-<!-- MENU MOBILE BUTTON -->
-<button id="menuBtn" class="d-md-none">
-    <i class="bi bi-list" style="font-size: 22px;"></i>
-</button>
+    <!-- MENU MOBILE BUTTON -->
+    <button id="menuBtn" class="d-md-none">
+        <i class="bi bi-list" style="font-size: 22px;"></i>
+    </button>
 
 
-<!-- SIDEBAR -->
-<div class="sidebar" id="sidebar">
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar">
 
-    <h4>FGC MTB</h4>
+        <h4>FGC MTB</h4>
 
-    <!-- Ranking -->
-    <a href="{{ route('rankings') }}"
-       class="{{ request()->routeIs('rankings') ? 'active' : '' }}">
-        <i class="bi bi-bar-chart-line"></i>
-        Ranking
-    </a>
+        <!-- Ranking -->
+        <a href="{{ route('rankings') }}"
+            class="{{ request()->routeIs('rankings') ? 'active' : '' }}">
+            <i class="bi bi-bar-chart-line"></i>
+            Ranking
+        </a>
 
-    <!-- Resultados -->
-    <a href="{{ route('resultados') }}"
-       class="{{ request()->routeIs('resultados') ? 'active' : '' }}">
-       <i class="bi bi-flag"></i>
-        Resultados
-    </a>
+        <!-- Resultados -->
+        <a href="{{ route('resultados') }}"
+            class="{{ request()->routeIs('resultados') ? 'active' : '' }}">
+            <i class="bi bi-flag"></i>
+            Resultados
+        </a>
 
-    <!-- Cadastros -->
-    <a class="d-flex justify-content-between" data-bs-toggle="collapse"
-       href="#cadastrosMenu" role="button">
-        <span><i class="bi bi-folder"></i> Cadastros</span>
-        <i class="bi bi-chevron-down"></i>
-    </a>
+        <!-- Cadastros -->
+        <a class="d-flex justify-content-between" data-bs-toggle="collapse"
+            href="#cadastrosMenu" role="button">
+            <span><i class="bi bi-folder"></i> Cadastros</span>
+            <i class="bi bi-chevron-down"></i>
+        </a>
 
-    <div class="collapse ps-3" id="cadastrosMenu">
-        <a href="{{ route('atletas') }}" class="{{ request()->routeIs('atletas') ? 'active' : '' }}">
-            <i class="bi bi-person"></i> Atletas
-        </a>
-        <a href="{{ route('equipes') }}" class="{{ request()->routeIs('equipes') ? 'active' : '' }}">
-            <i class="bi bi-people"></i> Equipes
-        </a>
-        <a href="{{ route('provas') }}" class="{{ request()->routeIs('provas') ? 'active' : '' }}">
-            <i class="bi bi-bicycle"></i> Provas
-        </a>
-        <a href="{{ route('categorias.index') }}" class="{{ request()->routeIs('categorias.*') ? 'active' : '' }}">
-            <i class="bi bi-tags"></i> Categorias
-        </a>
-        <a href="{{ route('temporadas') }}" class="{{ request()->routeIs('temporadas') ? 'active' : '' }}">
-            <i class="bi bi-calendar-event"></i> Temporadas
-        </a>
-        <a href="{{ route('pontuacao') }}" class="{{ request()->routeIs('pontuacao') ? 'active' : '' }}">
-            <i class="bi bi-star"></i> Pontuação
-        </a>
-        <a href="{{ route('cidades.index') }}" class="{{ request()->routeIs('cidades.*') ? 'active' : '' }}">
-            <i class="bi bi-geo-alt"></i> Cidades
-        </a>
+        <div class="collapse ps-3" id="cadastrosMenu">
+            <a href="{{ route('atletas') }}" class="{{ request()->routeIs('atletas') ? 'active' : '' }}">
+                <i class="bi bi-person"></i> Atletas
+            </a>
+            <a href="{{ route('equipes.index') }}" class="{{ request()->routeIs('equipes.*') ? 'active' : '' }}">
+                <i class="bi bi-people"></i> Equipes
+            </a>
+
+            <a href="{{ route('provas') }}" class="{{ request()->routeIs('provas') ? 'active' : '' }}">
+                <i class="bi bi-bicycle"></i> Provas
+            </a>
+            <a href="{{ route('categorias.index') }}" class="{{ request()->routeIs('categorias.*') ? 'active' : '' }}">
+                <i class="bi bi-tags"></i> Categorias
+            </a>
+            <a href="{{ route('temporadas') }}" class="{{ request()->routeIs('temporadas') ? 'active' : '' }}">
+                <i class="bi bi-calendar-event"></i> Temporadas
+            </a>
+            <a href="{{ route('pontuacao') }}" class="{{ request()->routeIs('pontuacao') ? 'active' : '' }}">
+                <i class="bi bi-star"></i> Pontuação
+            </a>
+            <a href="{{ route('cidades.index') }}" class="{{ request()->routeIs('cidades.*') ? 'active' : '' }}">
+                <i class="bi bi-geo-alt"></i> Cidades
+            </a>
+        </div>
+
     </div>
 
-</div>
+
+    <!-- CONTENT -->
+    <div class="content">
+        @yield('content')
+    </div>
 
 
-<!-- CONTENT -->
-<div class="content">
-    @yield('content')
-</div>
-
-
-<script>
-    // MOBILE MENU TOGGLE
-    document.getElementById('menuBtn').addEventListener('click', function () {
-        document.getElementById('sidebar').classList.toggle('open');
-    });
-</script>
+    <script>
+        // MOBILE MENU TOGGLE
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('open');
+        });
+    </script>
 
 </body>
+
 </html>

@@ -211,7 +211,7 @@
         <a href="{{ route('rankings') }}">Rankings</a>
         <a href="{{ route('resultados') }}">Resultados</a>
         <a href="{{ route('atletas') }}">Atletas</a>
-        <a href="{{ route('equipes') }}">Equipes</a>
+        <a href="{{ route('equipes.index') }}">Equipes</a>
         <a href="{{ route('provas') }}">Provas</a>
         <a href="{{ route('temporadas') }}">Temporadas</a>
         <a href="{{ route('pontuacao') }}">Pontuação</a>
