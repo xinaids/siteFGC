@@ -159,9 +159,10 @@
             <a href="{{ route('categorias.index') }}" class="{{ request()->routeIs('categorias.*') ? 'active' : '' }}">
                 <i class="bi bi-tags"></i> Categorias
             </a>
-            <a href="{{ route('temporadas') }}" class="{{ request()->routeIs('temporadas') ? 'active' : '' }}">
+            <a href="{{ route('temporadas.index') }}" class="{{ request()->routeIs('temporadas.*') ? 'active' : '' }}">
                 <i class="bi bi-calendar-event"></i> Temporadas
             </a>
+
             <a href="{{ route('pontuacao') }}" class="{{ request()->routeIs('pontuacao') ? 'active' : '' }}">
                 <i class="bi bi-star"></i> Pontuação
             </a>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CidadeController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\TemporadaController;
 
 // Página inicial → Dashboard
 Route::get('/', function () {
@@ -39,3 +40,4 @@ Route::get('/pontuacao', function () {
 Route::resource('cidades', CidadeController::class);
 Route::resource('categorias', CategoriaController::class);
 Route::resource('equipes', EquipeController::class); // CORRETO
+Route::resource('temporadas', TemporadaController::class);
