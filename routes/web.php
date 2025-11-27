@@ -5,13 +5,16 @@ use App\Http\Controllers\CidadeController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\TemporadaController;
+use App\Http\Controllers\PontuacaoController;
+use App\Http\Controllers\ProvaController;
+use App\Http\Controllers\AtletaController;
 
-// Página inicial → Dashboard
+// Dashboard
 Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
-// Páginas simples (ainda sem CRUD)
+// Outras páginas soltas (se existirem)
 Route::get('/rankings', function () {
     return view('rankings');
 })->name('rankings');
@@ -24,20 +27,12 @@ Route::get('/atletas', function () {
     return view('atletas');
 })->name('atletas');
 
-Route::get('/provas', function () {
-    return view('provas');
-})->name('provas');
 
-Route::get('/temporadas', function () {
-    return view('temporadas');
-})->name('temporadas');
-
-Route::get('/pontuacao', function () {
-    return view('pontuacao');
-})->name('pontuacao');
-
-// CRUDs
+// CRUDs oficiais — não criar rotas duplicadas
 Route::resource('cidades', CidadeController::class);
 Route::resource('categorias', CategoriaController::class);
-Route::resource('equipes', EquipeController::class); // CORRETO
+Route::resource('equipes', EquipeController::class);
 Route::resource('temporadas', TemporadaController::class);
+Route::resource('pontuacao', PontuacaoController::class);
+Route::resource('provas', ProvaController::class);
+Route::resource('atletas', AtletaController::class);

@@ -146,30 +146,37 @@
         </a>
 
         <div class="collapse ps-3" id="cadastrosMenu">
-            <a href="{{ route('atletas') }}" class="{{ request()->routeIs('atletas') ? 'active' : '' }}">
+
+            <a href="{{ route('atletas.index') }}" class="{{ request()->routeIs('atletas.*') ? 'active' : '' }}">
                 <i class="bi bi-person"></i> Atletas
             </a>
+
             <a href="{{ route('equipes.index') }}" class="{{ request()->routeIs('equipes.*') ? 'active' : '' }}">
                 <i class="bi bi-people"></i> Equipes
             </a>
 
-            <a href="{{ route('provas') }}" class="{{ request()->routeIs('provas') ? 'active' : '' }}">
+            <a href="{{ route('provas.index') }}" class="{{ request()->routeIs('provas.*') ? 'active' : '' }}">
                 <i class="bi bi-bicycle"></i> Provas
             </a>
+
             <a href="{{ route('categorias.index') }}" class="{{ request()->routeIs('categorias.*') ? 'active' : '' }}">
                 <i class="bi bi-tags"></i> Categorias
             </a>
+
             <a href="{{ route('temporadas.index') }}" class="{{ request()->routeIs('temporadas.*') ? 'active' : '' }}">
                 <i class="bi bi-calendar-event"></i> Temporadas
             </a>
 
-            <a href="{{ route('pontuacao') }}" class="{{ request()->routeIs('pontuacao') ? 'active' : '' }}">
+            <a href="{{ route('pontuacao.index') }}" class="{{ request()->routeIs('pontuacao.*') ? 'active' : '' }}">
                 <i class="bi bi-star"></i> Pontuação
             </a>
+
             <a href="{{ route('cidades.index') }}" class="{{ request()->routeIs('cidades.*') ? 'active' : '' }}">
                 <i class="bi bi-geo-alt"></i> Cidades
             </a>
+
         </div>
+
 
     </div>
 

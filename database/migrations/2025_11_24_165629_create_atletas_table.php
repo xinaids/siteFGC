@@ -9,14 +9,14 @@ return new class extends Migration {
         Schema::create('atletas', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->enum('sexo', ['M','F']);
+            $table->string('cpf')->nullable();
+            $table->enum('genero', ['M','F','PCD'])->default('M');
             $table->date('nascimento')->nullable();
 
             $table->foreignId('cidade_id')->nullable()->constrained('cidades')->nullOnDelete();
             $table->foreignId('categoria_id')->nullable()->constrained('categorias')->nullOnDelete();
             $table->foreignId('equipe_id')->nullable()->constrained('equipes')->nullOnDelete();
 
-            // se o atleta for usuário do sistema
             $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
 
             $table->timestamps();
