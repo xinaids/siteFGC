@@ -132,11 +132,12 @@
         </a>
 
         <!-- Resultados -->
-        <a href="{{ route('resultados') }}"
-            class="{{ request()->routeIs('resultados') ? 'active' : '' }}">
+        <a href="{{ route('resultados.index') }}"
+            class="{{ request()->routeIs('resultados.*') ? 'active' : '' }}">
             <i class="bi bi-flag"></i>
             Resultados
         </a>
+
 
         <!-- Cadastros -->
         <a class="d-flex justify-content-between" data-bs-toggle="collapse"

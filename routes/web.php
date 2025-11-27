@@ -8,6 +8,7 @@ use App\Http\Controllers\TemporadaController;
 use App\Http\Controllers\PontuacaoController;
 use App\Http\Controllers\ProvaController;
 use App\Http\Controllers\AtletaController;
+use App\Http\Controllers\ResultadoController;
 
 // Dashboard
 Route::get('/', function () {
@@ -23,9 +24,6 @@ Route::get('/resultados', function () {
     return view('resultados');
 })->name('resultados');
 
-Route::get('/atletas', function () {
-    return view('atletas');
-})->name('atletas');
 
 
 // CRUDs oficiais — não criar rotas duplicadas
@@ -36,3 +34,5 @@ Route::resource('temporadas', TemporadaController::class);
 Route::resource('pontuacao', PontuacaoController::class);
 Route::resource('provas', ProvaController::class);
 Route::resource('atletas', AtletaController::class);
+Route::resource('resultados', ResultadoController::class);
+
