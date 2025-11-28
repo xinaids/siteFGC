@@ -53,7 +53,7 @@
             <th class="text-center">
                 {{ $p->etapa }}ª Etapa <br>
                 {{ $p->nome }} <br>
-                <small><b>{{ strtoupper($p->modalidade) }}</b> • Peso {{ $p->peso }}</small>
+                <small><b>{{ strtoupper($p->tipo ?? '-') }}</b> • Peso {{ $p->peso }}</small>
             </th>
             @endforeach
 
