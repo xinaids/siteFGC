@@ -9,5 +9,6 @@ class Temporada extends Model
     protected $fillable = [
         'ano',
         'descricao',
+        'ativa',
     ];
 }

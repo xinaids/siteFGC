@@ -21,14 +21,14 @@ class TemporadaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'ano' => 'required|integer|min:2000|max:2100|unique:temporadas,ano',
-            'descricao' => 'nullable|string|max:255',
+            'ano' => 'required|integer',
+            'descricao' => 'nullable|string',
         ]);
 
-        Temporada::create([
-            'ano' => $request->ano,
-            'descricao' => $request->descricao,
-        ]);
+        $data = $request->all();
+        $data['ativa'] = $request->has('ativa'); // checkbox true/false
+
+        Temporada::create($data);
 
         return redirect()->route('temporadas.index')
             ->with('success', 'Temporada criada com sucesso.');
@@ -42,14 +42,14 @@ class TemporadaController extends Controller
     public function update(Request $request, Temporada $temporada)
     {
         $request->validate([
-            'ano' => 'required|integer|min:2000|max:2100|unique:temporadas,ano,' . $temporada->id,
-            'descricao' => 'nullable|string|max:255',
+            'ano' => 'required|integer',
+            'descricao' => 'nullable|string',
         ]);
 
-        $temporada->update([
-            'ano' => $request->ano,
-            'descricao' => $request->descricao,
-        ]);
+        $data = $request->all();
+        $data['ativa'] = $request->has('ativa');
+
+        $temporada->update($data);
 
         return redirect()->route('temporadas.index')
             ->with('success', 'Temporada atualizada com sucesso.');

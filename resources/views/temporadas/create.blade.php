@@ -18,6 +18,11 @@
         <input type="text" name="descricao" class="form-control">
     </div>
 
+    <div class="mb-3 form-check">
+        <input type="checkbox" name="ativa" id="ativa" class="form-check-input" checked>
+        <label for="ativa" class="form-check-label">Ativa</label>
+    </div>
+
     <button class="btn btn-primary">Salvar</button>
     <a href="{{ route('temporadas.index') }}" class="btn btn-secondary">Cancelar</a>
 </form>

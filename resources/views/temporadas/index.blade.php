@@ -17,6 +17,7 @@
             <th>ID</th>
             <th>Ano</th>
             <th>Descrição</th>
+            <th>Status</th>
             <th>Ações</th>
         </tr>
     </thead>
@@ -26,13 +27,24 @@
             <td>{{ $t->id }}</td>
             <td>{{ $t->ano }}</td>
             <td>{{ $t->descricao }}</td>
+
+            <td>
+                @if($t->ativa)
+                    <span class="badge bg-success">Ativa</span>
+                @else
+                    <span class="badge bg-secondary">Inativa</span>
+                @endif
+            </td>
+
             <td>
                 <a href="{{ route('temporadas.edit', $t) }}" class="btn btn-warning btn-sm">Editar</a>
 
                 <form action="{{ route('temporadas.destroy', $t) }}" method="POST" class="d-inline">
                     @csrf
                     @method('DELETE')
-                    <button class="btn btn-danger btn-sm" onclick="return confirm('Excluir?')">Excluir</button>
+                    <button class="btn btn-danger btn-sm" onclick="return confirm('Excluir?')">
+                        Excluir
+                    </button>
                 </form>
             </td>
         </tr>

@@ -10,6 +10,7 @@ return new class extends Migration {
             $table->id();
             $table->integer('ano');
             $table->string('descricao')->nullable();
+            $table->boolean('ativa')->default(true);
             $table->timestamps();
         });
     }

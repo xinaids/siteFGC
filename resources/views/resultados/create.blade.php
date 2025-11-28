@@ -9,6 +9,7 @@
 <form action="{{ route('resultados.store') }}" method="POST">
     @csrf
 
+    {{-- PROVA --}}
     <div class="mb-3">
         <label class="form-label">Prova *</label>
         <select name="prova_id" class="form-control" required>
@@ -21,43 +22,44 @@
         </select>
     </div>
 
+    {{-- ATLETA --}}
     <div class="mb-3">
         <label class="form-label">Atleta *</label>
         <select name="atleta_id" class="form-control" required>
             <option value="">Selecione...</option>
             @foreach($atletas as $a)
-                <option value="{{ $a->id }}">
-                    {{ $a->nome }}
-                </option>
+                <option value="{{ $a->id }}">{{ $a->nome }}</option>
             @endforeach
         </select>
     </div>
 
+    {{-- CATEGORIA --}}
     <div class="mb-3">
         <label class="form-label">Categoria</label>
         <select name="categoria_id" class="form-control">
             <option value="">Automática / Não informado</option>
             @foreach($categorias as $c)
-                <option value="{{ $c->id }}">
-                    {{ $c->nome }}
-                </option>
+                <option value="{{ $c->id }}">{{ $c->nome }}</option>
             @endforeach
         </select>
     </div>
 
+    {{-- CLASSIFICAÇÃO (CORRETO) --}}
     <div class="mb-3">
         <label class="form-label">Classificação</label>
-        <input type="number" name="classificacao" min="1" class="form-control">
+        <input type="number" name="classificacao" min="1" class="form-control" placeholder="Ex: 1">
     </div>
 
+    {{-- TEMPO --}}
     <div class="mb-3">
         <label class="form-label">Tempo (HH:MM:SS)</label>
         <input type="text" name="tempo" class="form-control" placeholder="02:15:33">
     </div>
 
+    {{-- STATUS --}}
     <div class="mb-3">
-        <label class="form-label">Status</label>
-        <select name="status" class="form-control">
+        <label class="form-label">Status *</label>
+        <select name="status" class="form-control" required>
             <option value="OK">OK</option>
             <option value="DNF">DNF</option>
             <option value="DSQ">DSQ</option>

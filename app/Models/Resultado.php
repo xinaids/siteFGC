@@ -12,7 +12,7 @@ class Resultado extends Model
         'categoria_id',
         'classificacao',
         'tempo',
-        'pontuacao',
+        'pontuacao',   // <── CAMPO CERTO
         'status',
     ];
 
