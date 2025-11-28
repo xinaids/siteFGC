@@ -10,6 +10,7 @@ use App\Http\Controllers\ProvaController;
 use App\Http\Controllers\AtletaController;
 use App\Http\Controllers\ResultadoController;
 
+
 // Dashboard
 Route::get('/', function () {
     return view('dashboard');
@@ -36,3 +37,4 @@ Route::resource('provas', ProvaController::class);
 Route::resource('atletas', AtletaController::class);
 Route::resource('resultados', ResultadoController::class);
 
+Route::get('/resultados', [ResultadoController::class, 'index'])->name('resultados');
